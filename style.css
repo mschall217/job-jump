@@ -1,6 +1,21 @@
 *{
     font-family: 'Heebo', sans-serif;
 }
+.full-container {
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: row;
+}
+.container {
+    border: 2px solid red;
+    height: 175px;
+}
+
+.results {
+    border: 2px solid lime;
+    width: 500px;
+    height: 300px;
+}
 
 .fa-virus{
     color: black;
@@ -8,7 +23,6 @@
 }
 .row{
     align-content: center;
-    margin: 0px;
 
 }
 .buttonSection{
