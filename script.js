@@ -37,6 +37,18 @@ function callApi() {
             if (response.ok) {
                 response.json().then(function (data) {
                     console.log(data);
+                    // create div to hold each job posting
+                    var resultContainer = document.createElement('div');
+                    results.appendChild(resultContainer);
+
+                    // create job title header within job posting
+                    var jobTitleCont = document.createElement('h2');
+                    resultContainer.appendChild(jobTitleCont);
+
+                    //set text content of job title
+                    var positionTitle = data.SearchResult.SearchResultItems[0].MatchedObjectDescriptor.PositionTitle;
+                    resultContainer.textContent = positionTitle;
+                    console.log(positionTitle);
                 })
             }
         })
@@ -47,7 +59,7 @@ function callApi() {
             if (response.ok) {
                 response.json().then(function (data) {
                     console.log(data);
-                    const resultCont = document.createElement('div')
+                    
                 })
             }
         })
