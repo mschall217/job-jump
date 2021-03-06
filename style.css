@@ -1,3 +1,7 @@
+*{
+    font-family: 'Heebo', sans-serif;
+}
+
 .fa-virus{
     color: black;
     font-size: 24;
@@ -9,4 +13,21 @@
 }
 .buttonSection{
     padding-left: 15px;
+}
+.jumbotron{
+    background-color: lightgrey;
+}
+.lead{
+    text-align: justify;
+    color: darkslateblue;
+}
+.display-4{
+    padding: 5px;
+}
+.logo{
+    padding: 5px;
+    margin: 5px;
+}
+.second{
+    color: #5E0086;
 }
