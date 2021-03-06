@@ -1,4 +1,6 @@
-
+const keyword = document.querySelector('#keyword');
+const place = document.querySelector('#place');
+const result = document.querySelector('#result');
 
 
 
