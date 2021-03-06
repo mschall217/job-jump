@@ -1,3 +1,12 @@
-.btn{
-    padding: 0;
+.fa-virus{
+    color: black;
+    font-size: 24;
+}
+.row{
+    align-content: center;
+    margin: 0px;
+
+}
+.buttonSection{
+    padding-left: 15px;
 }
