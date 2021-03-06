@@ -37,18 +37,42 @@ function callApi() {
             if (response.ok) {
                 response.json().then(function (data) {
                     console.log(data);
-                    // create div to hold each job posting
-                    var resultContainer = document.createElement('div');
-                    results.appendChild(resultContainer);
+                    //clears previous search result
+                    results.innerHTML = '';
+                    
+                    for (var i=0; i < data.SearchResult.SearchResultCount; i++) {
 
-                    // create job title header within job posting
-                    var jobTitleCont = document.createElement('h2');
-                    resultContainer.appendChild(jobTitleCont);
+                        // create div to hold each job posting
+                        var resultContainer = document.createElement('div');
+                        results.appendChild(resultContainer);
 
-                    //set text content of job title
-                    var positionTitle = data.SearchResult.SearchResultItems[0].MatchedObjectDescriptor.PositionTitle;
-                    resultContainer.textContent = positionTitle;
-                    console.log(positionTitle);
+                        // create job title header within job posting
+                        var jobTitleCont = document.createElement('h2');
+                        resultContainer.appendChild(jobTitleCont);
+                        //set text content of job title
+                        var positionTitle = data.SearchResult.SearchResultItems[i].MatchedObjectDescriptor.PositionTitle;
+                        jobTitleCont.textContent = positionTitle;
+                
+                        // create organization tag
+                        var orgNameTag = document.createElement('h4');
+                        resultContainer.appendChild(orgNameTag);
+                        //set text content of job organization
+                        var orgName = data.SearchResult.SearchResultItems[i].MatchedObjectDescriptor.OrganizationName;
+                        orgNameTag.textContent = orgName;
+
+                        // create job desc p tag
+                        var orgNameTag = document.createElement('h4');
+                        resultContainer.appendChild(orgNameTag);
+                        //set text content of job description
+                        var orgName = data.SearchResult.SearchResultItems[i].MatchedObjectDescriptor.OrganizationName;
+                        orgNameTag.textContent = orgName;
+
+
+
+
+                        
+                    }
+                    
                 })
             }
         })
