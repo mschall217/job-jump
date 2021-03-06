@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Jump</title>
+    <title>JobJump</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
     <div class="jumbotron">
         <h1 class="display-4">JobJump</h1>
-        <p class="lead">tagline</p>
+        <p class="lead">New City, New Job, New You!</p>
         <hr class="my-4">
         <p class="lead">description</p>
     </div>
@@ -19,17 +19,14 @@
     <div class="row">
         <div class="input-group col-6">
             <div class="form-outline">
-                <input type="search" id="form1" class="form-control" placeholder="Enter Keyword"/>
+                <input type="search" id="keyword" class="form-control" placeholder="Enter Keyword"/>
                 <label class="form-label" for="form1"></label>
             </div>
-            <button type="button" class="btn btn-primary"> Search
-            <i class="fas fa-search"></i>
-            </button>
-        </div>
-        <div class="input-group col-6">
-            <div class="form-outline">
-                <input type="search" id="form1" class="form-control" placeholder="Enter Place"/>
-                <label class="form-label" for="form1"></label>
+            <div class="input-group col-6">
+                <div class="form-outline">
+                    <input type="search" id="place" class="form-control" placeholder="Enter Place"/>
+                    <label class="form-label" for="form1"></label>
+                </div>
             </div>
             <button type="button" class="btn btn-primary"> Search
             <i class="fas fa-search"></i>
@@ -37,7 +34,7 @@
         </div>
     </div>
 </div>
-    <div class="container"></div>
+    <div class="results"></div>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 <script src="script.js"></script>
