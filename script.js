@@ -3,7 +3,7 @@
 
 
 const jobApiUrl = 'https://data.usajobs.gov/api/Search?Keyword=software&Page=3&ResultsPerPage=50&LocationName=Ohio';
-const homeApiUrl = 'http://www.zillow.com/webservice/GetSearchResults.htm';
+const homeApiUrl = 'https://api.covidtracking.com/v1/us/current.json';
 
 fetch(jobApiUrl, {
     headers: {
@@ -19,15 +19,13 @@ fetch(jobApiUrl, {
     })
 
 
-fetch(homeApiUrl, {
-    headers: {
-        'zws-id': 'X1-ZWz16rhfk3l98r_6cyom'
-    }
-})
+fetch(homeApiUrl)
     .then(function (response) {
+        console.log(response);
         if (response.ok) {
             response.json().then(function (data) {
                 console.log(data);
             })
         }
     })
+
