@@ -18,7 +18,8 @@ function callApi() {
     const place = placeEl.value;
 
     const jobApiUrl = 'https://data.usajobs.gov/api/Search?Keyword=' + keyword + '&ResultsPerPage=50&LocationName=' + place;
-    const homeApiUrl = 'https://api.covidtracking.com/v1/us/current.json';
+    const covidApiUrl = "https://api.covidtracking.com/v1/states/" + place + "/current.json"
+
     console.log(keyword);
     console.log(place);
     console.log(jobApiUrl);
@@ -34,9 +35,8 @@ function callApi() {
                 })
             }
         })
-    
-    
-    fetch(homeApiUrl)
+
+        fetch(covidApiUrl)
         .then(function (response) {
             console.log(response);
             if (response.ok) {
