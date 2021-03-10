@@ -39,51 +39,34 @@ function callApi() {
                     console.log(data);
                     //clears previous search result
                     results.innerHTML = '';
-                    
-                    for (var i=0; i < data.SearchResult.SearchResultCount; i++) {
 
-                        // create div to hold each job posting
-                        var resultContainer = document.createElement('div');
-                        results.appendChild(resultContainer);
-
-                        // create job title header within job posting
-                        var jobTitleCont = document.createElement('h2');
-                        resultContainer.appendChild(jobTitleCont);
-                        //set text content of job title
-                        var positionTitle = data.SearchResult.SearchResultItems[i].MatchedObjectDescriptor.PositionTitle;
-                        jobTitleCont.textContent = positionTitle;
-                
-                        // create organization tag
-                        var orgNameTag = document.createElement('h4');
-                        resultContainer.appendChild(orgNameTag);
-                        //set text content of job organization
-                        var orgName = data.SearchResult.SearchResultItems[i].MatchedObjectDescriptor.OrganizationName;
-                        orgNameTag.textContent = orgName;
-
-                        // create job desc p tag
-                        var orgNameTag = document.createElement('h4');
-                        resultContainer.appendChild(orgNameTag);
-                        //set text content of job description
-                        var orgName = data.SearchResult.SearchResultItems[i].MatchedObjectDescriptor.OrganizationName;
-                        orgNameTag.textContent = orgName;
-
-
-
+                    for (var i = 0; i < data.SearchResult.SearchResultCount; i++) {
 
                         
+                        var positionTitle = data.SearchResult.SearchResultItems[i].MatchedObjectDescriptor.PositionTitle;
+                        
+                        //set text content of job organization
+                        var orgName = data.SearchResult.SearchResultItems[i].MatchedObjectDescriptor.OrganizationName;
+                        /* orgNameTag.textContent = orgName; */
+
+                        //create accordion for each search result
+                        var accordion = `<div class='accordion accordion-flush' id='accordionFlushExample'><div class='accordion-item'><h3 class='accordion-header' id='flush-heading${[i]}'><button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapse${[i]}' aria-expanded='false' aria-controls='flush-collapse${[i]}'> ${positionTitle} </button></h3><div id='flush-collapse${[i]}' class='accordion-collapse collapse' aria-labelledby='flush-heading${[i]}' data-bs-parent='#accordionFlushExample'><div class='accordion-body'>Organization: ${orgName}</div></div></div></div>`;
+
+                        results.innerHTML += accordion;
+
                     }
-                    
+
                 })
             }
         })
 
-        fetch(covidApiUrl)
+    fetch(covidApiUrl)
         .then(function (response) {
             console.log(response);
             if (response.ok) {
                 response.json().then(function (data) {
                     console.log(data);
-                    
+
                 })
             }
         })
