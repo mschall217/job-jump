@@ -28,29 +28,38 @@ function callApi() {
     console.log(keyword);
     console.log(place);
     console.log(jobApiUrl);
+    fetch(covidApiUrl)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function(covidData){
     fetch(jobApiUrl, {
         headers: {
             'Authorization-key': 'RN/eTW8teoxznCRynHSZxey6do4S52rVL47RUyd+Y1E='
         }
     })
+    
         .then(function (response) {
+            const {positive:positiveCases} = covidData;
+            const {death:numOfDeath} = covidData;
+            const {hospitalized:numHospitalized} = covidData;
+            console.log(covidData);
             if (response.ok) {
                 response.json().then(function (data) {
                     console.log(data);
                     //clears previous search result
                     results.innerHTML = '';
+                    
 
                     for (var i = 0; i < data.SearchResult.SearchResultCount; i++) {
 
-                        
                         var positionTitle = data.SearchResult.SearchResultItems[i].MatchedObjectDescriptor.PositionTitle;
-                        
-                        //set text content of job organization
                         var orgName = data.SearchResult.SearchResultItems[i].MatchedObjectDescriptor.OrganizationName;
-                        /* orgNameTag.textContent = orgName; */
+                        var duties = data.SearchResult.SearchResultItems[i].MatchedObjectDescriptor.UserArea.Details.MajorDuties.slice(0,4);
+                        var applyLink = data.SearchResult.SearchResultItems[i].MatchedObjectDescriptor.PositionURI;
 
                         //create accordion for each search result
-                        var accordion = `<div class='accordion accordion-flush' id='accordionFlushExample'><div class='accordion-item'><h3 class='accordion-header' id='flush-heading${[i]}'><button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapse${[i]}' aria-expanded='false' aria-controls='flush-collapse${[i]}'> ${positionTitle} </button></h3><div id='flush-collapse${[i]}' class='accordion-collapse collapse' aria-labelledby='flush-heading${[i]}' data-bs-parent='#accordionFlushExample'><div class='accordion-body'>Organization: ${orgName}</div></div></div></div>`;
+                        var accordion = `<div class='accordion accordion-flush' id='accordionFlushExample'><div class='accordion-item'><h3 class='accordion-header' id='flush-heading${[i]}'><button class='accordion-button collapsed row' type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapse${[i]}' aria-expanded='false' aria-controls='flush-collapse${[i]}'>Position: ${positionTitle} Organization: ${orgName}</button></h3><div id='flush-collapse${[i]}' class='accordion-collapse collapse' aria-labelledby='flush-heading${[i]}' data-bs-parent='#accordionFlushExample'><div class='accordion-body'> <p class="row">Job Description: ${duties}</p> <a href="${applyLink}" target="_blank">View Full Job Listing: ${applyLink}</a> <p class="row">Positive Cases: ${positiveCases} People Hospitalized: ${numHospitalized} Total Death: ${numOfDeath}</p></div></div></div></div>`;
 
                         results.innerHTML += accordion;
 
@@ -59,17 +68,7 @@ function callApi() {
                 })
             }
         })
-
-    fetch(covidApiUrl)
-        .then(function (response) {
-            console.log(response);
-            if (response.ok) {
-                response.json().then(function (data) {
-                    console.log(data);
-
-                })
-            }
-        })
+    })
 }
 
 searchbtn.addEventListener('click', callApi);

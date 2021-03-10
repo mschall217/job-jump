@@ -45,3 +45,13 @@
 .second{
     color: #5E0086;
 }
+
+.accordion-button{
+    margin: 10px;
+    padding-right: 10%;
+    padding-left: 10%;
+    text-align: center;
+    
+    
+
+}
