@@ -10,7 +10,12 @@ const place = placeEl.value;
 console.log(keyword);
 
 
-
+navigator.geolocation.getCurrentPosition((position) => {
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+    console.log(lon);
+    console.log(lat);
+});
 
 
 function callApi() {
@@ -28,6 +33,8 @@ function callApi() {
     console.log(keyword);
     console.log(place);
     console.log(jobApiUrl);
+
+
     fetch(jobApiUrl, {
         headers: {
             'Authorization-key': 'RN/eTW8teoxznCRynHSZxey6do4S52rVL47RUyd+Y1E='
@@ -71,5 +78,7 @@ function callApi() {
             }
         })
 }
+
+
 
 searchbtn.addEventListener('click', callApi);
