@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -29,7 +30,7 @@
             <div class="row">
                 <div class="input-group">
                     <div class="form-outline">
-                        <input type="search" id="keyword" class="form-control" placeholder="Enter Keyword" />
+                        <input type="search" id="keyword" class="form-control" style="font-family: FontAwesome;" placeholder="&#xf002 Enter Keyword"/>
                         <label class="form-label" for="form1"></label>
                     </div>
                 </div>
@@ -37,35 +38,21 @@
             <div class="row">
                 <div class="input-group">
                     <div class="form-outline">
-                        <input type="search" id="place" class="form-control" placeholder="Enter Place" />
+                        <input type="search" id="place" class="form-control" style="font-family: FontAwesome;" placeholder="&#xf041 Enter Place" />
                         <label class="form-label" for="form1"></label>
                     </div>
                 </div>
             </div>
             <div class="row buttonSection">
                 <button type="button" class="btn btn-primary"> Search
-                    <i class="fas fa-search"></i>
+                    <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
             </div>
 
         </form>
         <!--Results Container-->
         <div class="results col-sm-12 col-md-9">
-            <!--Bootstrap Accordion-->
-            <!-- <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                      Job and Covid Info
-                    </button>
-                  </h2>
-                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Information about the job and Covid will go here.</div>
-                  </div>
-                </div>
-                
-            </div> -->
-
+        
         </div>
     </div>
 
