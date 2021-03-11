@@ -46,11 +46,12 @@
     color: darkslateblue;
     padding-top: 10px;
     margin-bottom: 0px;
+    font-size: 25px;
 }
 
 .display-4 {
     padding: 5px;
-    
+    font-size: 70px;
 }
 
 .logo {
@@ -64,6 +65,7 @@
 .second {
     color: #5E0086;
     padding-top: 5px;
+    font-size: 19px;
 }
 
 .accordion-button {
@@ -82,9 +84,11 @@
 
 #keyword {
     margin-left: 6px;
+    font-size: 20px;
 }
 
 #place {
     margin-left: 6px;
+    font-size: 20px;
 }
 
