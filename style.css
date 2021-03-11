@@ -1,11 +1,13 @@
 *{
     font-family: 'Heebo', sans-serif;
 }
+
 .full-container {
     border: 2px solid blue;
     display: flex;
     flex-direction: row;
 }
+
 .container {
     border: 2px solid red;
     height: 175px;
@@ -21,27 +23,46 @@
     color: black;
     font-size: 24;
 }
+
 .row{
     align-content: center;
-
 }
+
 .buttonSection{
     padding-left: 15px;
 }
+
 .jumbotron{
     background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
 }
+
+.centering {
+    text-align: center;
+}
+
 .lead{
     text-align: justify;
     color: darkslateblue;
+    padding-top: 10px;
 }
+
 .display-4{
     padding: 5px;
+    
 }
+
 .logo{
     padding: 5px;
     margin: 5px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
 }
+
 .second{
     color: #5E0086;
 }
@@ -51,7 +72,5 @@
     padding-right: 10%;
     padding-left: 10%;
     text-align: center;
-    
-    
-
 }
+
