@@ -30,11 +30,13 @@
 }
 
 .jumbotron {
+    background-image: url(./images/Portrait.jpg);
     background-color: rgb(231, 231, 231);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 2rem;
+    height: 300px;
 }
 
 .centering {
@@ -72,18 +74,21 @@
     padding-right: 20px;
     padding-left: 20px;
     text-align: center;
-
-
 }
+
 .covidRed{
-    color: red;
+    background-color: red;
 }
+
 .covid-style{
     display: inline-flex;
-    padding: 10px;
+    padding: 5px;
     width: 100%;
     justify-content: center;
+    border-bottom: 2px solid darkslateblue;
+    margin-bottom: 20px;
 }
+
 .accordion-button {
     background-color: white;
     border: 2px solid #5E0086;
@@ -93,6 +98,19 @@
     padding-left: 10%;
     text-align: center;
     box-shadow: 3px 4px #cecece;
+}
+.accordion-body{
+    color: black;
+}
+
+.btn-primary {
+    background-color: #5E0086;
+    border-color: #5E0086; 
+}
+
+.btn-primary {
+    background-color: #5E0086;
+    border-color: #5E0086; 
 }
 
 #keyword {
@@ -104,5 +122,3 @@
     margin-left: 6px;
     font-size: 20px;
 }
-
-
