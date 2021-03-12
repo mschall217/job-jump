@@ -3,10 +3,7 @@ const placeEl = document.querySelector('#place');
 const result = document.querySelector('#result');
 const searchbtn = document.querySelector('.btn');
 const results = document.querySelector('.results');
-
-const keywordSaveSearch = keywordEl.value;
-const placeSaveSearch = placeEl.value;
-
+const recentSearchContainer = document.querySelector('.container');
 
 navigator.geolocation.getCurrentPosition((position) => {
     var lat = position.coords.latitude;
@@ -76,15 +73,47 @@ function callApi() {
             }
         })
     })
-    //save current search to local storage
-    localStorage.setItem("recentSearch", JSON.stringify({"keyword": keywordInput, "place": placeInput}));
+    
+    
 }
 
-console.log(place);
-console.log(keyword);
 
-/* function saveSearch() {
-    localStorage.setItem("recentSearch", JSON.stringify({"keyword": keywordInput, "place": placeInput}));
-}*/
+function saveSearch() {
+    //store input values in local scope
+    let keywordSaveSearch = keywordEl.value;
+    let placeSaveSearch = placeEl.value;
 
-searchbtn.addEventListener('click', callApi);
+    //save current search to local storage
+    /* localStorage.setItem("recentSearch", JSON.stringify({"keyword": keywordSaveSearch, "place": placeSaveSearch})); */
+    localStorage.setItem('keyword', JSON.stringify(keywordSaveSearch));
+    localStorage.setItem('place', JSON.stringify(placeSaveSearch));
+
+    recentSearchPTag.innerHTML = '';
+
+    recentKeyword = JSON.parse(localStorage.getItem('keyword'));
+    recentPlace = JSON.parse(localStorage.getItem('place'));
+    recentSearchPTag.innerHTML = "You recently searched for " + recentKeyword + " jobs in " + recentPlace;
+    
+    keywordEl.value = '';
+    placeEl.value = '';
+}
+
+let recentKeyword = JSON.parse(localStorage.getItem('keyword'));
+let recentPlace = JSON.parse(localStorage.getItem('place'));
+
+/* const recentSearches = localStorage.getItem(JSON.parse('recentSearch')); */
+
+//display localStorage recent searches to page
+const recentSearchPTag = document.createElement('p');
+
+if (recentSearchPTag != '') {
+    recentSearchPTag.innerHTML = '';
+}
+
+recentSearchPTag.innerHTML = "You recently searched for " + recentKeyword + " jobs in " + recentPlace;
+recentSearchContainer.append(recentSearchPTag);
+
+searchbtn.addEventListener('click', () => {
+    callApi();
+    saveSearch();
+});
