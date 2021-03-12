@@ -4,10 +4,8 @@ const result = document.querySelector('#result');
 const searchbtn = document.querySelector('.btn');
 const results = document.querySelector('.results');
 
-const keyword = keywordEl.value;
-const place = placeEl.value;
-
-console.log(keyword);
+const keywordSaveSearch = keywordEl.value;
+const placeSaveSearch = placeEl.value;
 
 
 navigator.geolocation.getCurrentPosition((position) => {
@@ -74,8 +72,15 @@ function callApi() {
             }
         })
     })
+    //save current search to local storage
+    localStorage.setItem("recentSearch", JSON.stringify({"keyword": keywordInput, "place": placeInput}));
 }
 
+console.log(place);
+console.log(keyword);
 
+/* function saveSearch() {
+    localStorage.setItem("recentSearch", JSON.stringify({"keyword": keywordInput, "place": placeInput}));
+}*/
 
 searchbtn.addEventListener('click', callApi);
