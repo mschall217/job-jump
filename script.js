@@ -16,7 +16,7 @@ navigator.geolocation.getCurrentPosition((position) => {
 function callApi() {
     //gets input field values
     const keywordInput = keywordEl.value;
-    const placeInput = placeEl.value;
+    const placeInput = placeEl.value.toUpperCase();
 
     //splits input values if searching with multiple words
     const keyword = keywordInput.replace(" ", "%20");
@@ -109,25 +109,33 @@ function saveSearch() {
     placeEl.value = '';
 }
 
+let recentKeyword = localStorage.setItem('keyword', JSON.stringify(''));
+let recentPlace = localStorage.setItem('place', JSON.stringify(''));
 
+recentKeyword = JSON.parse(localStorage.getItem('keyword'));
+recentPlace = JSON.parse(localStorage.getItem('place'));
 
-let recentKeyword = JSON.parse(localStorage.getItem('keyword'));
-let recentPlace = JSON.parse(localStorage.getItem('place'));
+let recentSearchPTag = document.createElement('p');
 
-if (recentKeyword && recentPlace === '') {
+console.log(recentKeyword);
+console.log(recentPlace);
+
+if (recentKeyword && recentPlace == '') {
     recentSearchPTag.innerHTML = '';
+} else {
+    recentSearchPTag.innerHTML = "You recently searched for " + recentKeyword + " jobs in " + recentPlace;
 }
 
 /* const recentSearches = localStorage.getItem(JSON.parse('recentSearch')); */
 
 //display localStorage recent searches to page
-const recentSearchPTag = document.createElement('p');
+
 
 if (recentSearchPTag != '') {
     recentSearchPTag.innerHTML = '';
 }
 
-recentSearchPTag.innerHTML = "You recently searched for " + recentKeyword + " jobs in " + recentPlace;
+
 recentSearchContainer.append(recentSearchPTag);
 
 searchbtn.addEventListener('click', () => {
