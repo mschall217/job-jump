@@ -16,7 +16,7 @@ navigator.geolocation.getCurrentPosition((position) => {
 function callApi() {
     //gets input field values
     const keywordInput = keywordEl.value;
-    const placeInput = placeEl.value;
+    const placeInput = placeEl.value.toUpperCase();
 
     //splits input values if searching with multiple words
     const keyword = keywordInput.replace(" ", "%20");
