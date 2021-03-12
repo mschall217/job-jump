@@ -38,6 +38,17 @@
     height: 300px;
 }
 
+.border-gradient {
+    border-bottom: 10px solid;
+    border-image-slice: 1;
+    border-width: 3px;
+    }
+
+.border-gradient-purple {
+    border-image-source: linear-gradient(to right, darkslateblue, white);
+}
+
+
 .centering {
     text-align: center;
 }
