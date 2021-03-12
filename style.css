@@ -30,14 +30,24 @@
 }
 
 .jumbotron {
-    background-image: url(./images/Portrait.jpg);
-    background-color: rgb(231, 231, 231);
+    background-image: linear-gradient(to bottom right, darkslateblue , rgb(255, 255, 255));
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 2rem;
     height: 300px;
 }
+
+.border-gradient {
+    border-bottom: 10px solid;
+    border-image-slice: 1;
+    border-width: 3px;
+    }
+
+.border-gradient-purple {
+    border-image-source: linear-gradient(to right, darkslateblue, white);
+}
+
 
 .centering {
     text-align: center;
@@ -96,8 +106,9 @@
     margin: 5px;
     padding-right: 10%;
     padding-left: 10%;
-    text-align: center;
+    justify-content: center;
     box-shadow: 3px 4px #cecece;
+    width: 100%
 }
 .accordion-body{
     color: black;
@@ -111,6 +122,12 @@
 .btn-primary {
     background-color: #5E0086;
     border-color: #5E0086; 
+}
+
+.org {
+    font-weight: bolder;
+    font-size: 20px;
+    text-decoration: underline;
 }
 
 #keyword {
