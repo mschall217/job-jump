@@ -109,6 +109,10 @@ function saveSearch() {
     placeEl.value = '';
 }
 
+if (recentKeyword && recentPlace === '') {
+    recentSearchPTag.innerHTML = '';
+}
+
 let recentKeyword = JSON.parse(localStorage.getItem('keyword'));
 let recentPlace = JSON.parse(localStorage.getItem('place'));
 
