@@ -76,7 +76,7 @@
 
 }
 .covidRed{
-    color: red;
+    background-color: red;
 }
 .covid-style{
     display: inline-flex;
@@ -93,6 +93,9 @@
     padding-left: 10%;
     text-align: center;
     box-shadow: 3px 4px #cecece;
+}
+.accordion-body{
+    color: black;
 }
 
 #keyword {
