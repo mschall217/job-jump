@@ -15,7 +15,7 @@ View our project at https://mschall217.github.io/job-jump/.
 
 ## Screenshot 
 
-![screenshot]()
+![screenshot](images/sitescreenshot.png)
 
 
 ## Usage
@@ -31,4 +31,5 @@ Please [open an issue](https://github.com/mschall217/job-jump/issues) for suppor
 
 ## Contributing
 
+This was truly a team effort along with a lot of googling 
 
