@@ -1,47 +1,92 @@
-*{
+* {
     font-family: 'Heebo', sans-serif;
 }
+
 .full-container {
-    border: 2px solid blue;
     display: flex;
     flex-direction: row;
 }
+
 .container {
-    border: 2px solid red;
     height: 175px;
 }
 
 .results {
-    border: 2px solid lime;
     width: 500px;
     height: 300px;
 }
 
-.fa-virus{
+.fa-virus {
     color: black;
     font-size: 24;
 }
-.row{
-    align-content: center;
 
+.row {
+    align-content: center;
 }
-.buttonSection{
+
+.buttonSection {
     padding-left: 15px;
 }
-.jumbotron{
-    background-color: lightgrey;
+
+.jumbotron {
+    background-color: rgb(231, 231, 231);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
 }
-.lead{
+
+.centering {
+    text-align: center;
+}
+
+.lead {
     text-align: justify;
     color: darkslateblue;
+    padding-top: 10px;
+    margin-bottom: 0px;
+    font-size: 25px;
 }
-.display-4{
+
+.display-4 {
     padding: 5px;
+    font-size: 70px;
 }
-.logo{
+
+.logo {
     padding: 5px;
     margin: 5px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
 }
-.second{
+
+.second {
     color: #5E0086;
+    padding-top: 5px;
+    font-size: 19px;
 }
+
+.accordion-button {
+    background-color: white;
+    border: 2px solid #5E0086;
+    border-radius: 5px;
+    margin: 5px;
+    padding-right: 10%;
+    padding-left: 10%;
+    text-align: center;
+    box-shadow: 3px 4px #cecece;
+}
+
+#keyword {
+    margin-left: 6px;
+    font-size: 20px;
+}
+
+#place {
+    margin-left: 6px;
+    font-size: 20px;
+}
+
+
