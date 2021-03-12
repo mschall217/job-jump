@@ -3,6 +3,7 @@ const placeEl = document.querySelector('#place');
 const result = document.querySelector('#result');
 const searchbtn = document.querySelector('.btn');
 const results = document.querySelector('.results');
+const covidInfo = document.querySelector('.covid-info');
 
 const keywordSaveSearch = keywordEl.value;
 const placeSaveSearch = placeEl.value;
@@ -45,7 +46,7 @@ function callApi() {
         .then(function (response) {
             const {positive:positiveCases} = covidData;
             const {death:numOfDeath} = covidData;
-            const {hospitalized:numHospitalized} = covidData;
+            const {positiveIncrease:increasePositive} = covidData;
     
             console.log(covidData);
             if (response.ok) {
@@ -53,9 +54,20 @@ function callApi() {
                     console.log(data);
                     //clears previous search result
                     results.innerHTML = '';
-                    var covidContainer = `<div class="row covid-style"><h4>COVID DATA FOR ${place}:<span style="margin: 0 10px;></span></h4> <h4 class="covid">Positive Cases: ${positiveCases} <span style="margin: 0 10px;></span></h4><h4 class="covid">People Hospitalized: ${numHospitalized} <span style="margin: 0 10px;></span></h4><h4 class="covid"> Total Death: ${numOfDeath} <span style="margin: 0 10px;></span></h4></div>`
+                    var covidContainer = `<section class="row covid-style"><h4>COVID DATA FOR ${place} - <span style="margin: 0 10px;></span></h4> <h4 class="covid">Total Positive Cases: ${positiveCases} <span style="margin: 0 10px;></span></h4><h4 class="covid">Number of Positive Cases per Day: ${increasePositive} <span style="margin: 0 10px;></span></h4><h4 class="covid"> Total Death: ${numOfDeath} <span style="margin: 0 10px;></span></h4></section>`
                     results.innerHTML += covidContainer;
-                    
+                    console.log(covidData.positive)
+                    console.log(typeof covidData.positive)
+                    if(covidData.positiveIncrease < 500)
+                    {
+                       results.style.color= "green";
+                    } else if(covidData.positiveIncrease > 500 && covidData.positiveIncrease < 1000){
+                        results.style.color= "orange";
+                    }else if (covidData.positiveIncrease > 1001){
+                        results.style.color= "red";
+                    }else{
+
+                    }
                     
                     for (var i = 0; i < data.SearchResult.SearchResultCount; i++) {
 
@@ -69,9 +81,9 @@ function callApi() {
                         var accordion = `<div class='accordion accordion-flush' id='accordionFlushExample'><div class='accordion-item'><h3 class='accordion-header' id='flush-heading${[i]}'><button class='accordion-button collapsed row' type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapse${[i]}' aria-expanded='false' aria-controls='flush-collapse${[i]}'> ${positionTitle} </button></h3><div id='flush-collapse${[i]}' class='accordion-collapse collapse' aria-labelledby='flush-heading${[i]}' data-bs-parent='#accordionFlushExample'><div class='accordion-body'> Organization: ${orgName}<p class="row">Job Description: ${duties}</p> <a href="${applyLink}" target="_blank">Click here to view full job listing</a></div></div></div></div>`;
 
                         results.innerHTML += accordion;
-
+                    
                     }
-
+                    return;
                 })
             }
         })
@@ -83,8 +95,12 @@ function callApi() {
 console.log(place);
 console.log(keyword);
 
+<<<<<<< HEAD
+searchbtn.addEventListener('click', callApi);
+=======
 /* function saveSearch() {
     localStorage.setItem("recentSearch", JSON.stringify({"keyword": keywordInput, "place": placeInput}));
 }*/
 
 searchbtn.addEventListener('click', callApi);
+>>>>>>> 30be48fd4230172da82d7ee8253902c71cab3866

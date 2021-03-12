@@ -77,7 +77,7 @@
 }
 
 .covidRed{
-    color: red;
+    background-color: red;
 }
 
 .covid-style{
@@ -98,6 +98,14 @@
     padding-left: 10%;
     text-align: center;
     box-shadow: 3px 4px #cecece;
+}
+.accordion-body{
+    color: black;
+}
+
+.btn-primary {
+    background-color: #5E0086;
+    border-color: #5E0086; 
 }
 
 .btn-primary {
