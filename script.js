@@ -95,12 +95,4 @@ function callApi() {
 console.log(place);
 console.log(keyword);
 
-<<<<<<< HEAD
 searchbtn.addEventListener('click', callApi);
-=======
-/* function saveSearch() {
-    localStorage.setItem("recentSearch", JSON.stringify({"keyword": keywordInput, "place": placeInput}));
-}*/
-
-searchbtn.addEventListener('click', callApi);
->>>>>>> 30be48fd4230172da82d7ee8253902c71cab3866
