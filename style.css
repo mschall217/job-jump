@@ -96,8 +96,9 @@
     margin: 5px;
     padding-right: 10%;
     padding-left: 10%;
-    text-align: center;
+    justify-content: center;
     box-shadow: 3px 4px #cecece;
+    width: 100%
 }
 .accordion-body{
     color: black;
