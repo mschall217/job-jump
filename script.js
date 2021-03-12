@@ -74,7 +74,7 @@ function callApi() {
 
                         
                         //create accordion for each search result
-                        var accordion = `<div class='accordion accordion-flush' id='accordionFlushExample'><div class='accordion-item'><h3 class='accordion-header' id='flush-heading${[i]}'><button class='accordion-button collapsed row' type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapse${[i]}' aria-expanded='false' aria-controls='flush-collapse${[i]}'> ${positionTitle} </button></h3><div id='flush-collapse${[i]}' class='accordion-collapse collapse' aria-labelledby='flush-heading${[i]}' data-bs-parent='#accordionFlushExample'><div class='accordion-body'> Organization: ${orgName}<p class="row">Job Description: ${duties}</p> <a href="${applyLink}" target="_blank">Click here to view full job listing</a></div></div></div></div>`;
+                        var accordion = `<div class='accordion accordion-flush' id='accordionFlushExample'><div class='accordion-item'><h3 class='accordion-header' id='flush-heading${[i]}'><button class='accordion-button collapsed row' type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapse${[i]}' aria-expanded='false' aria-controls='flush-collapse${[i]}'> ${positionTitle} </button></h3><div id='flush-collapse${[i]}' class='accordion-collapse collapse' aria-labelledby='flush-heading${[i]}' data-bs-parent='#accordionFlushExample'><div class='accordion-body'> <p class="org">Organization: ${orgName}</p> <p class="row">Job Description: ${duties}</p> <a href="${applyLink}" target="_blank">Click here to view full job listing</a></div></div></div></div>`;
 
                         results.innerHTML += accordion;
                     

@@ -30,8 +30,7 @@
 }
 
 .jumbotron {
-    background-image: url(./images/Portrait.jpg);
-    background-color: rgb(231, 231, 231);
+    background-image: linear-gradient(to bottom right, darkslateblue , rgb(255, 255, 255));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -112,6 +111,12 @@
 .btn-primary {
     background-color: #5E0086;
     border-color: #5E0086; 
+}
+
+.org {
+    font-weight: bolder;
+    font-size: 20px;
+    text-decoration: underline;
 }
 
 #keyword {
