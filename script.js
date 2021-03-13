@@ -109,23 +109,33 @@ function saveSearch() {
     placeEl.value = '';
 }
 
-if (recentKeyword && recentPlace === '') {
-    recentSearchPTag.innerHTML = '';
-}
+let recentKeyword = localStorage.setItem('keyword', JSON.stringify(''));
+let recentPlace = localStorage.setItem('place', JSON.stringify(''));
 
-let recentKeyword = JSON.parse(localStorage.getItem('keyword'));
-let recentPlace = JSON.parse(localStorage.getItem('place'));
+recentKeyword = JSON.parse(localStorage.getItem('keyword'));
+recentPlace = JSON.parse(localStorage.getItem('place'));
+
+let recentSearchPTag = document.createElement('p');
+
+console.log(recentKeyword);
+console.log(recentPlace);
+
+if (recentKeyword && recentPlace == '') {
+    recentSearchPTag.innerHTML = '';
+} else {
+    recentSearchPTag.innerHTML = "You recently searched for " + recentKeyword + " jobs in " + recentPlace;
+}
 
 /* const recentSearches = localStorage.getItem(JSON.parse('recentSearch')); */
 
 //display localStorage recent searches to page
-const recentSearchPTag = document.createElement('p');
+
 
 if (recentSearchPTag != '') {
     recentSearchPTag.innerHTML = '';
 }
 
-recentSearchPTag.innerHTML = "You recently searched for " + recentKeyword + " jobs in " + recentPlace;
+
 recentSearchContainer.append(recentSearchPTag);
 
 searchbtn.addEventListener('click', () => {
