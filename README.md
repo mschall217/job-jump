@@ -35,5 +35,6 @@ Please [open an issue](https://github.com/mschall217/job-jump/issues) for suppor
 
 ## Contributing
 
-This was truly a team effort along with a lot of googling 
-
+Morgan Schall GitHub: https://github.com/mschall217
+Brandon Hutchingson GitHub: https://github.com/bHutchingson
+Tre Scott GitHub: https://github.com/tres1396
