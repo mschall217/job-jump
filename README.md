@@ -28,6 +28,12 @@ View our project at https://mschall217.github.io/job-jump/.
 	THEN I see covid information for the state and job listings
 		
 
+## Technologies
+  HTML 
+  CSS
+  Boot Strap 
+  JavaScript
+  API
 
 ## Support
 
