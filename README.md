@@ -9,7 +9,9 @@ JobJump allows users to search for job keywords in any US State and returns a jo
 ## Table of Contents
 
 - [Installation](#installation)
+- [Screenshot](#screenshot)
 - [Usage](#usage)
+- [Technologies](#technologies)
 - [Support](#support)
 - [Contributing](#contributing)
 
